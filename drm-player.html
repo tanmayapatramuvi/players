@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Muvi6 DRM-video Player</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="https://player-sdk.muvi.com/v2/muvi-player-bundle.css">
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript" src="https://player-sdk.muvi.com/v2/muvi-player-bundle.js"></script>
+    <div id="my-player"></div>
+    <script>
+        var config = {
+            container: "#my-player",
+            playerType: "drm",
+            videoSource: {
+                "hls": "https://muvi-staging.s3.amazonaws.com/92554/EncodedVideo/uploads/movie_stream/full_movie/MAYICOMEINS08E20/hls/master.m3u8",
+                "dash": "https://muvi-staging.s3.amazonaws.com/92554/EncodedVideo/uploads/movie_stream/full_movie/MAYICOMEINS08E20/stream.mpd"
+            },
+            poster: "https://d250n7duzgh7t2.cloudfront.net/tfFJyUopbxWzTNNbu1QsxqEuF0S3Yegr/B05C552148D643158A8AD703B26331CC/il/A2BA8B09CC421CB1AC3F3E7EC531597233848747/5565AC1C4CD38E89389DE42EEED/webposters/6-1597233848747.jpg",
+            autoPlay: 1,
+            license: {
+                "wideVine": "https://license.pallycon.com/ri/licenseManager.do?pallycon-customdata-v2=eyJkcm1fdHlwZSI6IldpZGV2aW5lIiwgInNpdGVfaWQiOiJQUEtUIiwgInVzZXJfaWQiOiJMSUNFTlNFVE9LRU4iLCAiY2lkIjoiOTc3NTUzODA5MTAyODQ0NjA2Mjc3MDY4Mzk2NDM5NTYiLCAicG9saWN5IjoiK0dEd1BFbU5NdlVHMFE2SGx1bWM0MHdNbmFCMFBqZmE4elNUZVlSK2RYSTVWNW82OThPWjJlSXR4cEI1QlU3ZDl0NDgra0MxZUdBd09ndkJGU3V2VlhLempObzhXZXJLbDRQVTFXVmpDSGx6OWY5K3lRTFl1U2syVDZMT2poOHdPR3RuZjUrNzNOd0hjSTgyZVl3VnFKbTJuNjg0Z0pJZDlYMGtweGcyVENBbFVNcWtLRGY0b21TaTdwT1FrTk1NSDdDcTd5S0Z5ckFsTmZhdjlkTVZ4cnZ1WnpkeEl6RUxNQTliZnd4R21kRy9oSm1wamRoYmtlOVpEYTFrd2VLN1VwVDcwT3RLN0t1WkFzQWx6R3ZnYU9xdlR6MXkvdjVhalAwZExRWENMMElXdFRqQWdocmNFSjFPREl3V2twRE1SZko4anpJYlFhdlF5bExDY1ZqYzcydENMc1I4RUc4eE5iOFJWbXJxc3BCM2JvUC9OZnhhLzlrSHUxQjNaSmk0K2dibG5wK3RyZ2hITWJySUtKQ3RkS01YT0p4UEVVSjZEVzc0dXpXTHQ5U1VQV2xxZWpsSUpHckZ4bVRQMEszcFZHTVFQbGNuRExoVDgrLytRV1dqRE1BV3VST3I0SE50RjF2RlhFbEVDdU5IOUZmc2pkYWFNSjlDYkVlalhHa0taWFpYVnBtcytwbXNUTnltK0VPdURwY0hvUEpKRzVGZm42Sy9LOHJtdGpxZGlLWUtkdm8zU2hkR3B1S3RWczh2dnVTd0pPN2YvKytPNUNvYTFrOG5PZG5SbUUvSlZGMDE2L0VOQndMYVFUcFc2VGVKVnJjLy9ITk1zUGJUQk5IemszaHBIZUFjRnNQbDgxejlpb1FNUGZ2dFBUcGZwdHdKTk9OR0JDTWVZUnU5aUY3VWRtTEJzY1hFZktEQ21Ta3hReldIdWVCVXZpWm8rcjZyUnl5enVwZFdITy90UUd2M3hzaVRwaGE5WmlFPSIsICJ0aW1lc3RhbXAiOiIyMDIyLTAzLTE4VDA5OjM5OjM4KzAwOjAwIiwgImhhc2giOiJXRHhFUC91L1FpanRyYThFZDY1T0ljaUhSa2NWbXlCUkFBcUlxV3RFV280PSJ9",
+                "playReady": "https://license.pallycon.com/ri/licenseManager.do?pallycon-customdata-v2=eyJkcm1fdHlwZSI6IlBsYXlSZWFkeSIsICJzaXRlX2lkIjoiUFBLVCIsICJ1c2VyX2lkIjoiTElDRU5TRVRPS0VOIiwgImNpZCI6IjgzMDQ3MDg5NDc3MzYyNDY4MjgzMTQ3MDc0MTU3OTE5IiwgInBvbGljeSI6IitHRHdQRW1OTXZVRzBRNkhsdW1jNDB3TW5hQjBQamZhOHpTVGVZUitkWEk1VjVvNjk4T1oyZUl0eHBCNUJVN2Q5dDQ4K2tDMWVHQXdPZ3ZCRlN1dlZYS3pqTm84V2VyS2w0UFUxV1ZqQ0hsejlmOSt5UUxZdVNrMlQ2TE9qaDh3T0d0bmY1KzczTndIY0k4MmVZd1ZxRWplVTNjZkR0OGEwaEZocktUS25FSVdyc3RTRk12NnBrSWFwTUtwbDRmQ3g5dVRuTmlUN1lqZU1qK0RwMTdWMnU4OU5tY1UvTHRYZVJ0U3lyVXlPQVUrN3U3bWtsaXdmanVaWUFXQmljbVE1c2ZXaU5CaHVMSmtzLzk2QzhINUR3cmI0Ujk3dkpOVGU0SCtmNUs4M3owUUs3WWFqL090OGtOMmQ2T1Z2ZmV4NzE5NHgwWHowVGNMSFFTYzAxYVJ6UDN4Y1JrcFAxVkpPMlhoL3k3QUViNXZBdGxwVTNMSUNtVEk0Z01DVXhGaGNhRmcwaStMK0l2UXYzM3ZuNHE1ZkVNeWwvb3JKZ0xzeXlScVNwNHllcDVGT1lIZzY2bzdBMlRobWVablBLMWRnRmtBQi9GUkIzNC9jcjMyRThiUVFxNzI2MnZIbHdMZ0pmaTRJcm12eFVvSlFPL1prSUdtYnJPYTJyYmo0ajVwaXN0bFAxUmVLR0RyNW9XNFoweHlaRW5PMkdmSlh3Y2IvMDk3am9uN2FCODJtMG5vRDYwQm51WTA3TjQxY0ZPVlJZVzJkTlhwV2RQanBZaUUzRTRGWFhsc0NZWWo5R0tSTlpTMHhlSjErR0VvTUlZZ1lpZTU1S1gzTmxUdm1WRzNZcXBhNmlQczdYcUViTkRwSXlnMVBiVGh6SFpaR2hkK0FEdGpxL2IrVU9HeEhmNkdSYmQ4SHhIVTJMZnFLNERkZnNuRS8rUS8rUDVoTTZtejBIeFpMcS8vUW9EdDV2TWltenQ2L0dqTzI4ND0iLCAidGltZXN0YW1wIjoiMjAyMi0wMS0xMFQwNjoyMjozMyswMDowMCIsICJoYXNoIjoibHd4RnNwRWFYVklDQnpLa0xnODROWGo3dUlQNEFuNlNVWE5adlExa3VwRT0ifQ==",
+                "fairPlay": "https://license.pallycon.com/ri/licenseManager.do?pallycon-customdata-v2=eyJkcm1fdHlwZSI6IkZhaXJQbGF5IiwgInNpdGVfaWQiOiJQUEtUIiwgInVzZXJfaWQiOiJMSUNFTlNFVE9LRU4iLCAiY2lkIjoiYjRjMGI0MTQ2ODA2N2RjMWM3NzhlNjlkMWJmZWU3ZGUiLCAicG9saWN5IjoiK0dEd1BFbU5NdlVHMFE2SGx1bWM0MHdNbmFCMFBqZmE4elNUZVlSK2RYSTVWNW82OThPWjJlSXR4cEI1QlU3ZDl0NDgra0MxZUdBd09ndkJGU3V2VlhLempObzhXZXJLbDRQVTFXVmpDSGx6OWY5K3lRTFl1U2syVDZMT2poOHdPR3RuZjUrNzNOd0hjSTgyZVl3VnFHdkJxVDlMYkxsZFpveElld3VJcit5UlI0OFdEM3hlLy9qUk5XV2JCUE5FVk9HcXVtN1NaYXlwOWZCOHQ0UTRSTXBabGkwOUZ0MVlTd0Z6YU9zRS9kaldYUzJJZkM3K1YveXR2K2w3bGZVdDd5SkVSNmF3Vm1BSVdObUZVSHVrYnlVRGV0b1FQVUVsaWgwMDVaSVNoN1RXZ0hqVWhKTTU5SUtnd3FTd2c0akZ2K0EzNEhkeWxiQmhhbHRBRnI1cFFhbkFIOTQxd3FoYndEQzhYUzNXQnV5WVllVVo3Q2RlREliWFBWSEkrKzRpVitjcXB2NDZHdUdSUVpuNzhtWk16K3BlZ0c4REJjZ2lTUjVhMTVvbHFRNlo2NHFWMUxLQUFsZFdLM3pRWVA3c0ZDQVR6dnpQYWFTczNnRXdFRCtoVm9nT3ZIRmVKMExOdEFJWkhmUE1rNi9FajltNUd4VjlkQ21xbjcrWU1PYkNjaFpNa1FPYyt3VUNJeHJHeWR5cGJNR3JmanhtZ1pKRnNqL3NFc1NKU3dmZjBUa1dueWRPZEpvVnFJVnNsNzFlY1lUWkRsMXB0YlEreE1WYkNHR2dKbDhRSUd4Z0dHMUMrc1o1bHEyOUViYz0iLCAidGltZXN0YW1wIjoiMjAyMi0wMS0xMlQxNDozOToxOCswMDowMCIsICJoYXNoIjoiVGRqaGwvNVVTTTVDeGJERXVTaklqOE1pcFYrTm9ldHE1dFRXYkVmTjVQUT0ifQ=="
+            },
+            drmType: 2, // 1 - Expressplay, 2 - Pallycon
+            certificateUri: '', // String
+            logo: {
+                logo: "https://www.muvi.com/wp-content/themes/muvi/images/wordpress-websitelogo.png",
+                logoPosition: "LT",
+                logoFadeTime: null,
+                logoLinkUrl: "https://www.muvi.com",
+            },
+            waterMark: "Muvi LLC",
+            playButtonTooltip: "Play"
+        };
+        var player = $.fn.playerPlugin(config);
+        console.log(player);
+    </script>
+</body>
+
+</html>

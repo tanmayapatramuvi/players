@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Embed Player</title>
+    <!--Disk cache clear-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!--Disk cache clear-->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="https://player-sdk.muvi.com/v4/muvi-player-bundle.css" />
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="player"></div>
+    <script type="text/javascript" src="https://player-sdk.muvi.com/v4/muvi-player-bundle.js"></script>
+    <script type="text/javascript" src="https://player-sdk.muvi.com/v1/muvi-player-title.bundle.js"></script>
+    <script type="text/javascript" src="https://player-sdk.muvi.com/stable/custom-subtitle.min.js"></script>
+    <script>
+        var player = $.fn.playerPlugin({
+            container: "#player",
+            playerType: "dash",
+            videoSource:
+                "https://d20cxgtjhucgfc.cloudfront.net/DoYourTestingHere/Muvi6/Dash-nonDRM-videos/HarshadMeheta_S01_E07_720p/stream.mpd",
+            poster:
+                "https://d3jc3vjm4t7lis.cloudfront.net/c9Bsc11RxLVKT0wgfiBDgYMHDXeFCjKB/3D28C83C85544F0D9517DD2E7C7EEDAA/il/94d872a288874333a26e229eef35a67b/0b5114f59ae742a6aa61f5d546319b49/webposters/maxresdefault__10_-1651821144968.jpg",
+            logo: {
+                logo: "https://d3jc3vjm4t7lis.cloudfront.net/c9Bsc11RxLVKT0wgfiBDgYMHDXeFCjKB/3D28C83C85544F0D9517DD2E7C7EEDAA/pl/maxresdefault__13_-1651497555101-1653452235988.jpg",
+                logoPosition: "LT",
+            },
+            waterMark: ["157.33.68.164", "June 15, 2022"],
+            waterMarkSetting: {
+                behavior: 1,
+                infrequently: 10,
+                position: "LT",
+                fontOpacity: 1,
+                fontSize: null,
+            },
+            textTracks: [
+                {
+                    url: "https://dtu142d8k2g2g.cloudfront.net/c9Bsc11RxLVKT0wgfiBDgYMHDXeFCjKB/3D28C83C85544F0D9517DD2E7C7EEDAA/vl/29d2cdda5f284d6da0ab37ba419034c5/subtitle/668acf156b0e70102c214eb6216c464d/Coldplay-Hymn-For-The-Weekend-(Official-video)-7b170de7945f1d10c0c9ae74a1622259.vtt",
+                    lang: "Gv",
+                    kind: "subtitles",
+                    label: "Gaelic (Manx) (Gv)",
+                },
+                {
+                    url: "https://dtu142d8k2g2g.cloudfront.net/c9Bsc11RxLVKT0wgfiBDgYMHDXeFCjKB/3D28C83C85544F0D9517DD2E7C7EEDAA/vl/29d2cdda5f284d6da0ab37ba419034c5/subtitle/dcde5c06269e1c779c4ff86cec6a779b/Coldplay-Hymn-For-The-Weekend-(Official-video)-e95c4e5dbd2e8272ef549a9cb3eded5e.vtt",
+                    lang: "Gd",
+                    kind: "subtitles",
+                    label: "Gaelic (Scottish) (Gd)",
+                },
+                {
+                    url: "https://dtu142d8k2g2g.cloudfront.net/c9Bsc11RxLVKT0wgfiBDgYMHDXeFCjKB/3D28C83C85544F0D9517DD2E7C7EEDAA/vl/29d2cdda5f284d6da0ab37ba419034c5/subtitle/0b399e0f6ecc64a968cf39f40b9c7f2b/Coldplay-Hymn-For-The-Weekend-(Official-video)-e6afcc6558fb89a2009526406e27bb91.vtt",
+                    lang: "Rw",
+                    kind: "subtitles",
+                    label: "Kinyarwanda (Ruanda) (Rw)",
+                },
+                {
+                    url: "https://dtu142d8k2g2g.cloudfront.net/c9Bsc11RxLVKT0wgfiBDgYMHDXeFCjKB/3D28C83C85544F0D9517DD2E7C7EEDAA/vl/29d2cdda5f284d6da0ab37ba419034c5/subtitle/bf53f12e4799d597f58d0be01701b481/Coldplay-Hymn-For-The-Weekend-(Official-video)-d42bf7121033fc336e61b58eeaf10c1b.vtt",
+                    lang: "Rn",
+                    kind: "subtitles",
+                    label: "Kirundi (Rundi) (Rn)",
+                },
+                {
+                    url: "https://dtu142d8k2g2g.cloudfront.net/c9Bsc11RxLVKT0wgfiBDgYMHDXeFCjKB/3D28C83C85544F0D9517DD2E7C7EEDAA/vl/29d2cdda5f284d6da0ab37ba419034c5/subtitle/def6c29d21df525c94130f508cc23042/Coldplay-Hymn-For-The-Weekend-(Official-video)-4e34a89dbb55f3bf0077adf2bb396595.vtt",
+                    lang: "Lv",
+                    kind: "subtitles",
+                    label: "Latvian (Lettish) (Lv)",
+                },
+                {
+                    url: "https://dtu142d8k2g2g.cloudfront.net/c9Bsc11RxLVKT0wgfiBDgYMHDXeFCjKB/3D28C83C85544F0D9517DD2E7C7EEDAA/vl/29d2cdda5f284d6da0ab37ba419034c5/subtitle/2a03695ec5db778ab5ce9e84ce80c128/Coldplay-Hymn-For-The-Weekend-(Official-video)-0090d3951d64b2f251dd2e3f93faa250.vtt",
+                    lang: "Li",
+                    kind: "subtitles",
+                    label: "Limburgish ( Limburger) (Li)",
+                },
+                {
+                    url: "https://dtu142d8k2g2g.cloudfront.net/c9Bsc11RxLVKT0wgfiBDgYMHDXeFCjKB/3D28C83C85544F0D9517DD2E7C7EEDAA/vl/29d2cdda5f284d6da0ab37ba419034c5/subtitle/3e5f1fe7bf627659153a7a214b17d0e7/Coldplay-Hymn-For-The-Weekend-(Official-video)-32bdd7beecd6c70cfd20be0a4bf8a0c2.vtt",
+                    lang: "Om",
+                    kind: "subtitles",
+                    label: "Oromo (Afan, Galla) (Om)",
+                },
+                {
+                    url: "https://dtu142d8k2g2g.cloudfront.net/c9Bsc11RxLVKT0wgfiBDgYMHDXeFCjKB/3D28C83C85544F0D9517DD2E7C7EEDAA/vl/29d2cdda5f284d6da0ab37ba419034c5/subtitle/bf08e0101698db76ff82f0af1e5bd251/Coldplay-Hymn-For-The-Weekend-(Official-video)-68b8f07f38411e7be21f62a55f12e684.vtt",
+                    lang: "Ps",
+                    kind: "subtitles",
+                    label: "Pashto (Pushto) (Ps)",
+                },
+                {
+                    url: "https://dtu142d8k2g2g.cloudfront.net/c9Bsc11RxLVKT0wgfiBDgYMHDXeFCjKB/3D28C83C85544F0D9517DD2E7C7EEDAA/vl/29d2cdda5f284d6da0ab37ba419034c5/subtitle/ac87074ace0a310a6c87a9c72124a97f/Coldplay-Hymn-For-The-Weekend-(Official-video)-7a50f23cea3cf107652b0393e35d0d6f.vtt",
+                    lang: "Sh",
+                    kind: "subtitles",
+                    label: "Serbo-Croatian (Sh)",
+                    default: true,
+                },
+                {
+                    url: "https://dtu142d8k2g2g.cloudfront.net/c9Bsc11RxLVKT0wgfiBDgYMHDXeFCjKB/3D28C83C85544F0D9517DD2E7C7EEDAA/vl/29d2cdda5f284d6da0ab37ba419034c5/subtitle/52c7621e6cb13f4bc7a735e8708fc9aa/Coldplay-Hymn-For-The-Weekend-(Official-video)-67214096ef9f992059ca1b3befd4673a.vtt",
+                    lang: "Sw",
+                    kind: "subtitles",
+                    label: "Swahili (Kiswahili) (Sw)",
+                },
+            ],
+            playBackRateVal: [0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5],
+            playButtonTooltip: "Play",
+            autoPlay: 1,
+            bigPlayPauseButton: true,
+            togglepause: true,
+            title:
+                "Lost Forever - Arcade x Milne Hai Mujhse Aayi Mashup | AB Ambients Chillout | Duncan x Arijit Singh",
+        });
+
+        var play = player;       
+        
+
+        //Dock title plugin
+        $.fn.registerPlayerTitle({
+            playerTitle: player.videojs,
+        });
+        var muviPlayerTitle = {
+            title:
+                "Lost Forever - Arcade x Milne Hai Mujhse Aayi Mashup | AB Ambients Chillout | Duncan x Arijit Singh",
+            description: "",
+        };
+        player.player_obj.playerTitlePlugin(muviPlayerTitle);
+
+        //Subtitle plugin
+        $.playerSubtitlePlugin.init({
+            font_size: 28,
+            color: "#006eff",
+            font_family: "sans-serif",
+            background_color: "#5c3566",
+            opacity: 1,
+        });
+    </script>
+</body>
+
+</html>
+

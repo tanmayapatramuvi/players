@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Muvi6 video Player</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="https://player-sdk.muvi.com/v2/muvi-player-bundle.css">
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript" src="https://player-sdk.muvi.com/v2/muvi-player-bundle.js"></script>
+    <div id="my-player"></div>
+    <script>
+        var config = {
+            container: "#my-player",
+            playerType: "dash",
+            videoSource: "https://bitmovin-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd",
+            poster: "https://d250n7duzgh7t2.cloudfront.net/tfFJyUopbxWzTNNbu1QsxqEuF0S3Yegr/B05C552148D643158A8AD703B26331CC/il/A2BA8B09CC421CB1AC3F3E7EC531597233848747/5565AC1C4CD38E89389DE42EEED/webposters/6-1597233848747.jpg",
+            autoPlay: 1,
+            logo: {
+                logo: "https://www.muvi.com/wp-content/themes/muvi/images/wordpress-websitelogo.png",
+                logoPosition: "LT",
+                logoFadeTime: null,
+                logoLinkUrl: "https://www.muvi.com",
+            },
+            waterMark: "Muvi LLC, All Rights Reserved:player@muvi.com",
+            playButtonTooltip: "Play"
+        };
+        var player = $.fn.playerPlugin(config);
+        console.log(player);
+    </script>
+</body>
+
+</html>
